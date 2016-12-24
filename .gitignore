@@ -1,27 +1,7 @@
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 dist
-
-# Don't track files in bower_components, except those for the Bootstrap grid (added 'xl' size)
-bower_components/*
-!bower_components/bootstrap-sass/
-bower_components/bootstrap-sass/*
-!bower_components/bootstrap-sass/assets/
-bower_components/bootstrap-sass/assets/*
-!bower_components/bootstrap-sass/assets/stylesheets/
-bower_components/bootstrap-sass/assets/stylesheets/*
-!bower_components/bootstrap-sass/assets/stylesheets/bootstrap/
-bower_components/bootstrap-sass/assets/stylesheets/bootstrap/*
-!bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
-!bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_responsive-utilities.scss
-!bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_grid.scss
-!bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/
-bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/*
-!bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss
-!bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid.scss
-
 node_modules
 npm-debug.log
 assets/styles/devtools/_imagehelper.scss
 favicons.zip
-bower.json
