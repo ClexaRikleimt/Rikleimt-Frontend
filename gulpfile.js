@@ -29,6 +29,8 @@ var manifest = require('asset-builder')('./assets/manifest.json');
 // - `path.source` - Path to the source files. Default: `assets/`
 // - `path.dist` - Path to the build directory. Default: `dist/`
 var path = manifest.paths;
+// var path.dist = 'static/'
+path['dist'] = 'static/';
 
 // `config` - Store arbitrary configuration values here.
 var config = manifest.config || {};

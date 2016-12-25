@@ -207,7 +207,13 @@ $contentCols: ($total-columns - $sidebarCols);
 
 
 // -- HEADER ITEMS ----------------------------------
-// [...]
+// Logo
+$logoImg: 'global/logo.png'; //only used to calculate dimensions below
+$logoImgWidth: image-width($logoImg);
+$logoImgHeight: image-height($logoImg);
+
+$headerLogoWidth: 175px;
+$headerLogoHeight: (($headerLogoWidth * $logoImgHeight) / $logoImgWidth);
 
 
 // -- SIDEBAR ITEMS ----------------------------------
