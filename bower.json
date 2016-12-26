@@ -10,7 +10,8 @@
     "bootstrap-sass": "3.3.5",
     "matchHeight": "~0.7.0",
     "jquery-hoverintent": "^1.8.1",
-    "slick-carousel": "^1.6.0"
+    "slick-carousel": "^1.6.0",
+    "jquery-touch-events": "^1.0.5"
   },
   "overrides": {
     "bootstrap-sass": {
