@@ -34,6 +34,25 @@
 </head>
 <body class="{% block bodyclasses %}{% endblock %}">
   <div id="page">
+    <div id="mainnav" class="opened">
+      <nav>
+        <h2><span>Menu</span></h2>
+        <button class="hamburger hamburger--vortex" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+        <ul>
+          <li><a href="#"><span>[[ _('Home') ]]</span></a></li>
+          <li><a href="#"><span>[[ _('Story') ]]</span></a></li>
+          <li><a href="#"><span>[[ _('Side Stories') ]]</span></a></li>
+          <li><a href="#"><span>[[ _('Archive') ]]</span></a></li>
+          <li><a href="#"><span>[[ _('WB Wiki') ]]</span></a></li>
+          <li><a href="#"><span>[[ _('Promotional Artwork') ]]</span></a></li>
+          <li><a href="#"><span>[[ _('FAQ') ]]</span></a></li>
+          <li><a href="#"><span>[[ _('About Us') ]]</span></a></li>
+          <li><a href="#"><span>[[ _('Contact Us') ]]</span></a></li>
+          <li><a href="#"><span>[[ _('Settings') ]]</span></a></li>
+        </ul>
+      </nav>
+    </div> <!-- /#mainnav -->
+
     <header id="siteHeader" role="banner">
       <div class="inner">
         <div class="logo"><a href="#"><img src="{{ url_for('static', filename='images/global/logo.png') }}" /></a></div>

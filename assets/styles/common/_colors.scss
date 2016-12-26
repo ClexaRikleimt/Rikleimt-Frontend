@@ -257,7 +257,15 @@ $clrSepLinesTrans2-invert: contrast-color($clrContentBG-invert, #FFF, #000);
 
 
 // -- MAIN NAV ----------------------------------
-// [...]
+$clrMainnavBG: $clrLoudBG1;
+$clrMainnavBorder: contrast-color($clrMainnavBG, darken($clrMainnavBG, 30%), lighten($clrMainnavBG, 30%));
+
+$clrMainnavTrigNormalBG: $clrMainnavBorder;
+$clrMainnavTrigHoverBG: darken($clrMainnavTrigNormalBG, 10%);
+$clrMainnavTrigActiveBG: darken($clrMainnavTrigHoverBG, 5%);
+$clrMainnavTrigNormalText: contrast-color($clrMainnavTrigNormalBG, #000, #FFF);
+$clrMainnavTrigHoverText: contrast-color($clrMainnavTrigHoverBG, #000, #FFF);
+$clrMainnavTrigActiveText: contrast-color($clrMainnavTrigActiveBG, #000, #FFF);
 
 
 // -- SIDEBAR ----------------------------------

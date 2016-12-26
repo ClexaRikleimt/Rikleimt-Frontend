@@ -31,6 +31,9 @@
           UTIL.fire('common', 'setResponsiveClasses');
         }).resize();
 
+        // Main nav
+        UTIL.fire('common', 'mainnav');
+
         // MatchHeight functions
         UTIL.fire('common', '_matchHeight');
       },
@@ -38,6 +41,10 @@
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
 
+        // Close mainnav
+        setTimeout(function() {
+          $('#mainnav').removeClass('opened');
+        }, 1000);
       },
       setResponsiveClasses: function(){
         // Add or remove classes on window resize
@@ -83,6 +90,22 @@
         else {
           setSize('narrow');
         }
+      },
+      mainnav: function() {
+        // Main nav
+
+        $('#mainnav button').click(function(){
+          $('#mainnav').toggleClass('opened');
+
+          $(this).blur();
+        });
+
+        $('#mainnav').swipeleft(function(){
+          $('#mainnav').addClass('opened');
+        });
+        $('#mainnav').swiperight(function(){
+          $('#mainnav').removeClass('opened');
+        });
       },
 
       _matchHeight: function() {

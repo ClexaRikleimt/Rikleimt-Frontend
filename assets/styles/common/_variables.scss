@@ -206,7 +206,7 @@ $contentCols: ($total-columns - $sidebarCols);
 // $contentHomeCols: $total-columns - $sidebarHomeCols;
 
 
-// -- HEADER ITEMS ----------------------------------
+// -- HEADER ----------------------------------
 // Logo
 $logoImg: 'global/logo.png'; //only used to calculate dimensions below
 $logoImgWidth: image-width($logoImg);
@@ -216,11 +216,20 @@ $headerLogoWidth: 175px;
 $headerLogoHeight: (($headerLogoWidth * $logoImgHeight) / $logoImgWidth);
 
 
-// -- SIDEBAR ITEMS ----------------------------------
+// -- MAINNAV ----------------------------------
+$mainnavWidth: 150px;
+$mainnavBorderWidth: 10px;
+
+$mainnavTrigWidth: 50px;
+$mainnavTrigHeight: $mainnavTrigWidth;
+$mainnavTrigRadius: $globalRadius;
+
+
+// -- SIDEBAR ----------------------------------
 // [...]
 
 
-// -- FOOTER ITEMS ----------------------------------
+// -- FOOTER ----------------------------------
 // [...]
 
 
