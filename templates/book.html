@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+{% block extraCSS %} <link rel="stylesheet" href="{{ url_for('static', filename='wow_book/wow_book.css' ) }}" /> {% endblock %}
+
+{% block bodyclasses %}is-home{% endblock %}
+
+{% block content %}
+  <section class="book">
+    <div id="mybook">
+      <div> This is the cover 2  </div>
+      <div> This is the page 1-1 </div>
+      <div> This is the page 2 </div>
+      <div> This is the page 3 </div>
+      <div> the end </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block extraScripts %}
+<script type="text/javascript" src="{{ url_for('static', filename='wow_book/wow_book.min.js') }}"></script>
+
+    <script type="text/javascript">
+      var root = 'https://jsonplaceholder.typicode.com';
+
+      $(function() {
+          $('#mybook').wowBook({
+            height : 500,
+            width  : 600,
+            thumbnailsPosition: 'bottom',
+            onShowPage: function(book,page, pageIndex) {
+              //console.log(book);
+              if(pageIndex == book.pages.length-2){
+                $.ajax({ //the internals of this ajax call should be replaced at some point
+                  url: root + '/posts/1',
+                  method: 'GET'
+                }).then(function(data) {
+                  console.log(data.body);
+                  book.insertPage("<div>"+data.body+"</div>");
+                  book.insertPage("<div> This is the other page </div>");
+
+                });
+              }
+            },
+          });
+
+        var book = $.wowBook('#mybook');
+        //alert("This book has "+book.pages.length+" pages.");
+        book.showThumbnails();
+        book.showLightbox();
+        $(".wowbook-lightbox > .wowbook-close").remove(); // remove lightbox's close button
+        book.updateBook();
+      });
+    </script>
+{% endblock %}

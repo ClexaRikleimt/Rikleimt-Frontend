@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% block title %}{% endblock %} | [[ site_name ]]</title>
+  {% block extraCSS %} {% endblock %}
 
   {% assets 'scss_main' %}
     <link rel="stylesheet" type='text/css' media='all' href="{{ ASSET_URL }}">
@@ -67,17 +68,22 @@
       <div class="sub">
         <div class="inner">
           <div class="copyright">
-            <p>&copy; [[ current_year ]] [[ site_name ]]. [[ _('All rights reserved.') ]]</p>
+            <p>&copy; [[ current_year 22]] [[ site_name ]]. [[ _('All rights reserved.') ]]</p>
           </div>
         </div>
       </div><!-- /#siteFooter .sub -->
     </footer><!-- /#siteFooter -->
   </div> <!-- /#page -->
 
-  <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
 
   {% assets 'js_main' %}
     <script type='text/javascript' src='{{ ASSET_URL }}'></script>
   {% endassets %}
+
+  {% block extraScripts %}{% endblock %}
+
 </body>
 </html>

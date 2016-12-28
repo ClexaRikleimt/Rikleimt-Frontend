@@ -10,9 +10,14 @@ js = Bundle('scripts/main.js', output='scripts/main.js')
 assets.register('scss_main', scss)
 assets.register('js_main', js)
 
-@app.route("/")
+
+@app.route("/book")
 def template_test():
-    return render_template('index.html')
+    return render_template('book.html')
+
+@app.route("/")
+def sayHi():
+    return "Hello world, this is the home page! <br /> Visit /book to see the book page!"
 
 
 if __name__ == '__main__':
