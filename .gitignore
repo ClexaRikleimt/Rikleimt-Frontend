@@ -4,3 +4,5 @@ node_modules
 npm-debug.log
 assets/styles/devtools/_imagehelper.scss
 favicons.zip
+
+.idea/
