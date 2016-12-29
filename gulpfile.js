@@ -30,7 +30,7 @@ var manifest = require('asset-builder')('./assets/manifest.json');
 // - `path.dist` - Path to the build directory. Default: `dist/`
 var path = manifest.paths;
 // var path.dist = 'static/'
-path['dist'] = 'static/';
+path['dist'] = 'static/'; // IMPORTANT: IF THIS PATH CHANGES, ALSO UPDATE IT IN THE 'CLEAN' TASK
 
 // `config` - Store arbitrary configuration values here.
 var config = manifest.config || {};
@@ -259,7 +259,12 @@ gulp.task('jshint', function() {
 
 // ### Clean
 // `gulp clean` - Deletes the build folder entirely.
-gulp.task('clean', require('del').bind(null, [path.dist]));
+// gulp.task('clean', require('del').bind(null, [path.dist_sub, '!' + path.dist_exclude]));
+gulp.task('clean', function() {
+  var del = require('del');
+
+  del(['static/**/*', '!static/plugins', '!static/plugins/**']);
+});
 
 // ### Watch
 // `gulp watch` - Use BrowserSync to proxy your dev server and synchronize code
