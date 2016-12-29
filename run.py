@@ -12,12 +12,12 @@ assets.register('js_main', js)
 
 
 @app.route("/book")
-def template_test():
-    return render_template('book.html')
+def template_book():
+  return render_template('book.html')
 
 @app.route("/")
-def sayHi():
-    return "Hello world, this is the home page! <br /> Visit /book to see the book page!"
+def template_home():
+  return render_template('index.html')
 
 
 if __name__ == '__main__':

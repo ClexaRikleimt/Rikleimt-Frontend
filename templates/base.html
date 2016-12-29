@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% block title %}{% endblock %} | [[ site_name ]]</title>
-  {% block extraCSS %} {% endblock %}
+  {% block extraCSS %}{% endblock %}
 
   {% assets 'scss_main' %}
     <link rel="stylesheet" type='text/css' media='all' href="{{ ASSET_URL }}">
@@ -61,7 +61,9 @@
     </header> <!-- /#siteHeader -->
 
     <section id="content" role="document">
-      {% block content %}{% endblock %}
+      <div class="inner">
+        {% block content %}{% endblock %}
+      </div>
     </section>
 
     <footer id="siteFooter" role="contentinfo">

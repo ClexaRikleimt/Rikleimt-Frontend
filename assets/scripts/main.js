@@ -114,13 +114,68 @@
     },
 
     // Home page
-    'home': {
+    'is_home': {
       init: function() {
         // JavaScript to be fired on the home page
       },
 
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
+      },
+    },
+
+    // Book page
+    'is_book': {
+      init: function() {
+        // JavaScript to be fired on the book page
+
+        // Setup the book
+        UTIL.fire('is_book', 'setupBook');
+      },
+
+      setupBook: function() {
+        // Setup the book
+
+        var root = 'https://jsonplaceholder.typicode.com';
+
+        var book = $('#mybook').wowBook({
+          width: 1140,
+          height: 500,
+          maxHeight: 600,
+          thumbnailsPosition: 'bottom',
+          flipSound: false,
+          scaleToFit: "section.book",
+          centeredWhenClosed: true,
+          toolbar: "lastLeft, left, right, lastRight, toc, zoomin, zoomout, fullscreen, thumbnails",
+          // responsiveSinglePage: function( book ){
+          //   // return true (and activate single page mode)
+          //   return $("body.tablet").length;
+          // },
+          onShowPage: function(book,page, pageIndex) {
+            //console.log(book);
+            if(pageIndex == book.pages.length-2){
+              $.ajax({ //the internals of this ajax call should be replaced at some point
+                url: root + '/posts/1',
+                method: 'GET'
+              }).then(function(data) {
+                // console.log(data.body);
+                book.insertPage("<div>"+data.body+"</div>");
+                book.insertPage("<div> This is the other page </div>");
+              });
+            }
+          },
+        }, function(){
+          book.showThumbnails();
+          book.showLightbox();
+
+          $(".wowbook-lightbox > .wowbook-close").remove(); // remove lightbox's close button
+
+          book.updateBook();
+        });
+      },
+
+      finalize: function() {
+        // JavaScript to be fired on the book page, after the init JS
       },
     }
   };
