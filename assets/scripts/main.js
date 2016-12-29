@@ -143,10 +143,15 @@
           height: 500,
           maxHeight: 600,
           thumbnailsPosition: 'bottom',
-          flipSound: false,
+          // flipSound: false,
+          flipSoundFile: [
+            "page-flip.mp3",
+            "page-flip.ogg"
+          ],
+          flipSoundPath: "/static/plugins/wow_book/sound/",
           scaleToFit: "section.book",
           centeredWhenClosed: true,
-          toolbar: "lastLeft, left, right, lastRight, toc, zoomin, zoomout, fullscreen, thumbnails",
+          toolbar: "lastLeft, left, right, lastRight, toc, zoomin, zoomout, flipsound, fullscreen, thumbnails",
           // responsiveSinglePage: function( book ){
           //   // return true (and activate single page mode)
           //   return $("body.tablet").length;
